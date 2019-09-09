@@ -29,7 +29,7 @@ def alpha_password(wordLen=8):
         for i in range(wordLen):
             word += random.choice('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuz')
 
-    print word
+    print(word)
 
 
 def alpha_lowercase(wordLen=8):
@@ -41,7 +41,7 @@ def alpha_lowercase(wordLen=8):
         for i in range(wordLen):
             word += random.choice('abcdefghijklmnopqrstuz')
 
-    print word
+    print(word)
 
 
 def alpha_uppercase(wordLen=8):
@@ -53,7 +53,7 @@ def alpha_uppercase(wordLen=8):
         for i in range(wordLen):
             word += random.choice('abcdefghijklmnopqrstuz')
 
-    print word
+    print(word)
 
 
 def alpha_num_password(wordLen=8):
@@ -65,7 +65,7 @@ def alpha_num_password(wordLen=8):
         for i in range(wordLen):
             word += random.choice('1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstu')
 
-    print word
+    print(word)
 
 
 def strong_password(wordLen=8):
@@ -77,7 +77,7 @@ def strong_password(wordLen=8):
         for i in range(wordLen):
             word += random.choice('-+_()*&$#@!<>;?|{}"1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstu')
 
-    print word
+    print(word)
 
 
 def passphrase(pass_len=4, min_word_len=4, seed="seed.txt"):
@@ -98,10 +98,10 @@ def passphrase(pass_len=4, min_word_len=4, seed="seed.txt"):
 
     words = txt.split()
 
-    #print words
-    print pass_len
+    #print(word)s
+    print(pass_len)
 
-    print len(words)
+    print(len(words))
 
     # Minimum word lenght
 
@@ -113,7 +113,7 @@ def passphrase(pass_len=4, min_word_len=4, seed="seed.txt"):
 
     idx = 0
 
-    print "Word List\n--------------"
+    print("Word List\n--------------")
 
     while idx < pass_len:
 
@@ -124,7 +124,7 @@ def passphrase(pass_len=4, min_word_len=4, seed="seed.txt"):
             word = random.choice(words)
 
         if len(word) >= min_word_len:
-            print word
+            print(word)
 
             passphrase = "".join([passphrase, word, " "])
             passw = "".join([passw, word[0]])
@@ -154,29 +154,29 @@ def passphrase(pass_len=4, min_word_len=4, seed="seed.txt"):
 
 
 
-    print "\nPassphrase all words"
-    print ".........................."
-    print passphrase
+    print("\nPassphrase all words")
+    print("..........................")
+    print(passphrase)
 
-    print "\nPassphrase all words joined"
-    print ".........................."
-    print passum
+    print("\nPassphrase all words joined")
+    print("..........................")
+    print(passum)
 
-    print "\nPassphrase separated by dash"
-    print ".........................."
-    print passdash
+    print("\nPassphrase separated by dash")
+    print("..........................")
+    print(passdash)
 
-    print "\nUpper / Lower case alternate password"
-    print ".........................."
-    print altern
+    print("\nUpper / Lower case alternate password")
+    print("..........................")
+    print(altern)
 
-    print "\nPassphrase number encoded"
-    print ".........................."
-    print enc
+    print("\nPassphrase number encoded")
+    print("..........................")
+    print(enc)
 
-    print "\nPassphrase initial of all words\t\t"
-    print ".........................."
-    print passw
+    print("\nPassphrase initial of all words\t\t")
+    print("..........................")
+    print(passw)
 
 
 import argparse
@@ -184,7 +184,7 @@ import sys
 
 desc =\
 """
-Interactive Pssword Creator\n
+Interactive Password Creator\n
 """
 parser = argparse.ArgumentParser(prog='passwordmaker', description=desc)
 parser.add_argument("-l", "--lenght", help="Password Lenght")
@@ -208,13 +208,13 @@ if len(sys.argv) == 1:
 
     parser.print_help()
 
-    print """
+    print("""
     Check the password strenght in:
     1. http://password-checker.online-domain-tools.com/
     2. http://daleswanson.org/things/password.htm
-    """
+    """)
 
-    print """
+    print("""
 
     Examples
 
@@ -253,7 +253,7 @@ if len(sys.argv) == 1:
     Passphrase initial of all words
     paa
 
-    """
+    """)
 
     sys.exit(1)
 
@@ -264,19 +264,19 @@ else:
     N = 6
 
 if args.strong:
-    print  strong_password(N)
+    print(strong_password(N))
 
 if args.numeric:
-    print numeric_password(N)
+    print(numeric_password(N))
 
 if args.alpha:
-    print alpha_password(N)
+    print(alpha_password(N))
 
 if args.alpha_lowercase:
-    print alpha_lowercase(N)
+    print(alpha_lowercase(N))
 
 if args.alpha_numeric:
-    print alpha_num_password(N)
+    print(alpha_num_password(N))
 
 if args.passphrase:
     passphrase(N, 5)
